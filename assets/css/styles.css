@@ -1,0 +1,176 @@
+:root{
+  --blue:#004E89;
+  --violet:#7B6CF6;
+  --rose:#E4A0B7;
+  --pearl:#F5F5F7;
+  --ink:#0E0E11;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--pearl);color:var(--ink);font-family:'Lora', serif;line-height:1.6}
+h1,h2,h3{font-family:'Montserrat', sans-serif;color:var(--blue);letter-spacing:0.2px;margin:0 0 0.5rem 0}
+h1{font-weight:600}
+.wrapper{max-width:1080px;margin:0 auto;padding:24px}
+.hero{
+  min-height:84vh;
+  display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden;
+}
+.hero .blueprint{
+  position:absolute; inset:0; background:url('../img/blueprint.png') center/contain no-repeat;
+  opacity:0.16; filter:contrast(110%) saturate(110%);
+}
+.hero .content{
+  position:relative; text-align:center; padding:2rem 1rem;
+}
+.kicker{font-family:'Montserrat', sans-serif; font-size:0.95rem; letter-spacing:0.18em; color:var(--violet); text-transform:uppercase}
+.title{font-size:clamp(2rem,4vw,3.6rem); margin:0.6rem 0 0.8rem}
+.sub{max-width:760px;margin:0 auto; color:#2a2a33}
+.section{padding:80px 0;border-top:1px solid rgba(0,0,0,0.04)}
+.grid-5{display:grid; gap:24px; grid-template-columns:repeat(5,minmax(0,1fr))}
+.card{background:white; border-radius:18px; padding:22px; border:1px solid rgba(0,0,0,0.06); min-height:140px}
+.card h3{font-size:1rem; margin-bottom:8px}
+.card p{font-size:0.95rem; opacity:0.85}
+.silhouette{
+  background:url('../img/silhouette.png') center/contain no-repeat; min-height:72vh; border-radius:20px;
+  filter:brightness(1.05) contrast(1.05); opacity:0.9;
+}
+.center{text-align:center}
+.quote{font-size:clamp(1.4rem,2.6vw,2.2rem); color:var(--ink);}
+.rose{color:var(--rose)}
+.footer{padding:48px 0 96px; text-align:center; font-size:14px; color:#555}
+.badge{display:inline-block; height:44px; width:44px; background:url('../img/logo.png') center/contain no-repeat; filter:saturate(1.05)}
+.btn{
+  display:inline-flex; gap:10px; align-items:center; justify-content:center;
+  border:1px solid var(--rose); color:var(--ink); padding:12px 18px; border-radius:999px; text-decoration:none;
+  transition:all .25s ease; font-family:'Montserrat', sans-serif; font-weight:600
+}
+.btn:hover{transform:translateY(-1px); box-shadow:0 8px 24px rgba(228,160,183,.22)}
+.small{font-size:12px; opacity:.75}
+@media (max-width:980px){
+  .grid-5{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .grid-5{grid-template-columns:1fr}
+}
+.fade-in{opacity:0; transform:translateY(12px); transition:opacity .8s ease, transform .8s ease}
+.in-view{opacity:1; transform:none}
+.tools-grid{display:grid;gap:24px;grid-template-columns:1fr 1fr}
+.tool{background:white;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:18px}
+.tool h3{margin:0 0 8px 0;font-family:'Montserrat',sans-serif;color:var(--blue)}
+.tool textarea{width:100%;min-height:120px;border:1px solid rgba(0,0,0,.1);border-radius:12px;padding:12px;background:#fff}
+.tool .row{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0}
+.tool select,.tool input,.tool button{border:1px solid rgba(0,0,0,.1);border-radius:999px;padding:10px 14px;background:#fff;font-family:'Montserrat',sans-serif}
+.tool button{border-color:var(--rose);cursor:pointer}
+.output{background:#fafafa;border:1px dashed rgba(0,0,0,.12);border-radius:12px;padding:14px;white-space:pre-wrap;min-height:120px}
+@media(max-width:980px){.tools-grid{grid-template-columns:1fr}}
+
+@media print{
+  header, nav, .btn, .tools-grid .row button, .footer { display:none !important; }
+  body{ background:white !important; }
+  .export-doc{ padding:24px; }
+  .export-doc h1{ font-family: 'Montserrat', sans-serif; font-size:22px; margin:0 0 6px; }
+  .export-doc h2{ font-family: 'Montserrat', sans-serif; font-size:16px; margin:18px 0 6px; }
+  .export-doc pre{ white-space:pre-wrap; border:1px solid #ddd; padding:10px; border-radius:8px; }
+}
+
+
+/* — HerFuture Portal UI — */
+.hf-form fieldset{ border:1px solid rgba(0,0,0,.06); padding:16px; border-radius:14px; margin:18px 0; background:#fff }
+.hf-form legend{ font-family:Montserrat, sans-serif; color:var(--blue); padding:0 6px }
+.hf-row{ display:flex; flex-wrap:wrap; gap:12px }
+.hf-form input, .hf-form select, .hf-form textarea{
+  flex:1 1 240px; border:1px solid rgba(0,0,0,.1); border-radius:12px; padding:12px; background:#fff;
+  font-family:'Lora', serif
+}
+.hf-form textarea{ min-height:120px; }
+.hf-grid{ display:grid; gap:24px; grid-template-columns:1fr 1fr; }
+@media (max-width:980px){ .hf-grid{ grid-template-columns:1fr } }
+.hf-scorecard{ display:flex; gap:18px; align-items:center; background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:16px; padding:16px }
+.hf-score-ctrls{ display:flex; flex-direction:column; gap:10px; min-width:240px }
+.hf-score-ctrls label{ font-family:Montserrat, sans-serif; font-size:12px; color:#2a2a33; display:flex; justify-content:space-between; gap:12px; align-items:center }
+.hf-score-ctrls input[type="range"]{ width:160px }
+.hf-halo{ background: radial-gradient(closest-side, rgba(123,108,246,.10), rgba(123,108,246,0) 60%); border-radius:50%; border:1px solid rgba(0,0,0,.06) }
+.hf-stage{ font-family:Montserrat, sans-serif; color:var(--blue); font-weight:600; margin-bottom:8px }
+.hf-out{ background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:12px; padding:12px; min-height:120px; white-space:pre-wrap }
+@media print{ header, nav, .btn, .footer{ display:none !important } body{ background:white !important } }
+
+/* ===== Athenia Color Polish & Sales Styling ===== */
+:root{
+  --blue:#004E89; --violet:#7B6CF6; --rose:#E4A0B7; --pearl:#F5F5F7; --ink:#0E0E11;
+}
+a{ color: var(--blue); text-decoration: none }
+a:hover{ text-decoration: underline }
+
+/* Colorful hero ribbons */
+.hero.colorful .blueprint{ opacity:.10; }
+.hero.colorful .ribbon{
+  position:absolute; inset:0; background:url('../img/sales_banner.jpg') center/cover no-repeat; opacity:.85; mix-blend:multiply;
+}
+.hero.colorful .content{ color:#0E0E11; }
+.badge{ filter: saturate(1.2) }
+
+/* Pricing */
+.pricing{ display:grid; gap:24px; grid-template-columns: repeat(3, minmax(0,1fr)); }
+@media(max-width:980px){ .pricing{ grid-template-columns: 1fr; } }
+.tier{
+  background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:18px; padding:22px; position:relative; overflow:hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+.tier::after{
+  content:""; position:absolute; inset:auto -40px -40px auto; width:180px; height:180px; border-radius:50%;
+  background: radial-gradient(circle at center, rgba(123,108,246,.22), rgba(123,108,246,0) 60%);
+}
+.tier h3{ font-family:Montserrat, sans-serif; color:var(--blue); margin:0 0 6px }
+.price{ font-family:Montserrat, sans-serif; font-weight:700; font-size:2rem; color:#0E0E11 }
+.tier ul{ margin:12px 0 0 0; padding:0 0 0 18px }
+.cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:14px }
+.btn.filled{
+  background: linear-gradient(135deg, var(--rose), var(--violet)); color:#fff; border-color:transparent;
+  box-shadow: 0 10px 24px rgba(228,160,183,.25), 0 6px 14px rgba(123,108,246,.18);
+}
+.btn.outline{ border-color: var(--blue); }
+.kicker.gradient{ 
+  background: linear-gradient(90deg, var(--blue), var(--violet), var(--rose));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+/* Sales sections */
+.split{ display:grid; gap:24px; grid-template-columns: 1.2fr .8fr; align-items:center }
+@media(max-width:980px){ .split{ grid-template-columns: 1fr } }
+.feature-list{ display:grid; gap:10px }
+.feature{ display:flex; gap:10px; align-items:flex-start }
+.feature .dot{ width:10px; height:10px; border-radius:50%; background:var(--rose); margin-top:.45rem }
+.badge-pill{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid rgba(0,0,0,.08); background:#fff }
+.hr{ height:1px; background:linear-gradient(90deg, rgba(0,0,0,.05), rgba(0,0,0,.12), rgba(0,0,0,.05)); margin:24px 0 }
+
+/* Shared tools grid */
+.tools-grid{display:grid;gap:24px;grid-template-columns:1fr 1fr}
+.tool{background:white;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:18px}
+.tool h3{margin:0 0 8px 0;font-family:'Montserrat',sans-serif;color:var(--blue)}
+.tool textarea{width:100%;min-height:120px;border:1px solid rgba(0,0,0,.1);border-radius:12px;padding:12px;background:#fff}
+.tool .row{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0}
+.tool select,.tool input,.tool button{border:1px solid rgba(0,0,0,.1);border-radius:999px;padding:10px 14px;background:#fff;font-family:'Montserrat',sans-serif}
+.tool button{border-color:var(--rose);cursor:pointer}
+.output{background:#fafafa;border:1px dashed rgba(0,0,0,.12);border-radius:12px;padding:14px;white-space:pre-wrap;min-height:120px}
+@media(max-width:980px){.tools-grid{grid-template-columns:1fr}}
+
+/* Studio page refinements */
+.studio-grid{display:grid;gap:24px;grid-template-columns:1fr 1fr}
+@media(max-width:980px){.studio-grid{grid-template-columns:1fr}}
+.tool .mini{font-size:.85rem; color:#555}
+.tool .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.tool canvas.poster{width:100%;max-width:520px;border-radius:12px;border:1px solid rgba(0,0,0,.08);background:#fff}
+.codebox{white-space:pre; background:#0e0e11; color:#f5f5f7; padding:12px; border-radius:10px; overflow:auto; max-height:300px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border:1px solid rgba(0,0,0,.08);padding:8px}
+.badge-soft{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,.08);background:#fff;margin-right:6px}
+
+/* Email Tracker layout */
+.et-layout{display:grid;grid-template-columns:280px 1fr 1.1fr;gap:18px}
+@media(max-width:1200px){.et-layout{grid-template-columns:1fr} .et-side,.et-list{order:2} .et-preview{order:3} }
+.et-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:14px}
+.et-side .client{display:flex;align-items:center;justify-content:space-between;border-bottom:1px dashed rgba(0,0,0,.1);padding:8px 0}
+.et-list .email{border-bottom:1px dashed rgba(0,0,0,.1);padding:10px 0;cursor:pointer}
+.et-list .email:hover{background:rgba(123,108,246,.06)}
+.et-preview pre{white-space:pre-wrap}
+.et-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.et-badge{display:inline-block;padding:6px 10px;border:1px solid rgba(0,0,0,.08);border-radius:999px;background:#fff;margin-right:6px}
