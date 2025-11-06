@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Athenia Studio — AI Integration Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<meta name="description" content="Athenia Studio — one hub for text‑to‑voice, text‑to‑image, blog & sales copy assistants, website generator, and leads tracker.">
+</head>
+<body>
+<header class="wrapper" aria-label="Header">
+  <div style="display:flex;align-items:center;gap:12px;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="index.html" class="badge" aria-label="Athenia Home"></a>
+      <strong style="font-family:Montserrat, sans-serif;letter-spacing:.06em;color:#0E0E11">ATHENIA GLOBAL HOLDINGS</strong>
+    </div>
+    <nav aria-label="Primary">
+      <a class="btn" href="sales.html">Sales</a>
+      <a class="btn" href="athenax-tools.html">AthenaX Tools</a>
+      <a class="btn" href="herfuture-portal.html">HerFuture Portal</a>
+      <a class="btn" href="evoke-tools.html">Evoke Tools</a>
+      <a class="btn" href="ms-trust-tools.html">Microsoft Trust</a>
+      <a class="btn" href="studio.html" aria-current="page">Studio</a>
+    
+      <a class="btn" href="email-tracker.html">Email Tracker</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="blueprint" aria-hidden="true"></div>
+    <div class="content wrapper fade-in">
+      <div class="kicker">Athenia Studio</div>
+      <h1 class="title">Create. Publish. Convert.</h1>
+      <p class="sub">One polished hub to integrate workflows with your four tool suites — with assistants for content, media, sites, and lead capture.</p>
+      <div style="margin-top:8px">
+        <span class="badge-soft">AthenaX</span>
+        <span class="badge-soft">HerFuture</span>
+        <span class="badge-soft">Evoke</span>
+        <span class="badge-soft">Microsoft Trust</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrapper fade-in">
+    <div class="studio-grid">
+
+      <div class="tool">
+        <h3>Text → Voice</h3>
+        <p class="mini">Uses your browser’s speech engine (no server). Great for voiceovers and accessibility.</p>
+        <textarea id="ttsText" placeholder="Paste text for narration..."></textarea>
+        <div class="row">
+          <select id="ttsVoice"></select>
+          <input id="ttsRate" type="range" min="0.6" max="1.6" step="0.1" value="1.0" />
+          <input id="ttsPitch" type="range" min="0" max="2" step="0.1" value="1.0" />
+          <button onclick="Studio.speak()">Speak</button>
+          <button onclick="Studio.stop()">Stop</button>
+        </div>
+      </div>
+
+      <div class="tool">
+        <h3>Text → Image Poster</h3>
+        <p class="mini">Generates a branded poster using theme colors and your headline.</p>
+        <input id="t2iHeadline" placeholder="Headline (e.g., Ethical AI. Human First.)">
+        <input id="t2iSub" placeholder="Subtext (optional)">
+        <div class="actions">
+          <button onclick="Studio.drawPoster()">Generate Poster</button>
+          <button onclick="Studio.downloadPoster()">Download PNG</button>
+        </div>
+        <canvas id="poster" width="900" height="1200" class="poster" aria-label="Generated poster"></canvas>
+      </div>
+
+      <div class="tool">
+        <h3>Website Generator</h3>
+        <p class="mini">Instant single‑file landing page using brand palette. Download and upload to GitHub Pages.</p>
+        <input id="siteTitle" placeholder="Site Title">
+        <input id="siteCTA" placeholder="Primary CTA (e.g., Try AthenaX Demos)">
+        <textarea id="siteSections" placeholder="One section title per line..."></textarea>
+        <div class="actions">
+          <button onclick="Studio.generateSite()">Preview</button>
+          <button onclick="Studio.downloadSite()">Download HTML</button>
+        </div>
+        <div id="sitePreview" class="codebox" aria-live="polite"></div>
+      </div>
+
+      <div class="tool">
+        <h3>Leads Tracker (CSV)</h3>
+        <p class="mini">Collect leads here. Export/import CSV. (Data is local to the browser.)</p>
+        <div class="row">
+          <input id="leadName" placeholder="Name">
+          <input id="leadEmail" placeholder="Email">
+          <input id="leadNotes" placeholder="Notes">
+          <button onclick="Studio.addLead()">Add</button>
+        </div>
+        <div class="actions">
+          <button onclick="Studio.exportCSV()">Export CSV</button>
+          <input type="file" id="csvFile" accept=".csv" onchange="Studio.importCSV(event)">
+        </div>
+        <table class="table" id="leadTable" aria-label="Leads table">
+          <thead><tr><th>Name</th><th>Email</th><th>Notes</th></tr></thead><tbody></tbody>
+        </table>
+      </div>
+
+      <div class="tool">
+        <h3>Blog Assistant</h3>
+        <p class="mini">Creates an outline + intro paragraph you can refine (or send to AthenaX/Evoke).</p>
+        <input id="blogTopic" placeholder="Topic (e.g., Governance as Product)">
+        <select id="blogTone"><option>Executive</option><option>Warm</option><option>Technical</option></select>
+        <button onclick="Studio.blog()">Generate</button>
+        <div id="blogOut" class="output"></div>
+      </div>
+
+      <div class="tool">
+        <h3>Sales Copy Assistant</h3>
+        <p class="mini">Headlines, subheads, bullets, CTA — tuned to Athenia’s brand voice.</p>
+        <input id="copyProduct" placeholder="Product/Offer Name">
+        <input id="copyAudience" placeholder="Audience (e.g., Enterprise CIOs)">
+        <input id="copyOutcome" placeholder="Primary outcome (e.g., provable compliance)">
+        <button onclick="Studio.copy()">Generate</button>
+        <div id="copyOut" class="output"></div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrapper small">© Athenia — Studio</div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/studio.js"></script>
+</body>
+</html>

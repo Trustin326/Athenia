@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evoke Media — Strategic Narrative Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<meta name="description" content="Evoke Media tools for narrative arcs, reputation analysis, influence planning, and harmony checks.">
+</head>
+<body>
+<header class="wrapper" aria-label="Header">
+  <div style="display:flex;align-items:center;gap:12px;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="index.html" class="badge" aria-label="Athenia Home"></a>
+      <strong style="font-family:Montserrat, sans-serif;letter-spacing:.06em;color:#0E0E11">ATHENIA GLOBAL HOLDINGS</strong>
+    </div>
+    <nav aria-label="Primary">
+      <a class="btn" href="sales.html">Sales</a>
+      <a class="btn" href="athenax-tools.html">AthenaX Tools</a>
+      <a class="btn" href="herfuture-portal.html">HerFuture Portal</a>
+      <a class="btn" href="evoke-tools.html" aria-current="page">Evoke Tools</a>
+      <a class="btn" href="ms-trust-tools.html">Microsoft Trust Tools</a>
+      <a class="btn" href="governance.html">Governance</a>
+      <a class="btn" href="esg.html">ESG</a>
+    
+      <a class="btn" href="email-tracker.html">Email Tracker</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="blueprint" aria-hidden="true"></div>
+  <div class="content wrapper fade-in">
+    <div class="kicker">Evoke Media</div>
+    <h1 class="title">Strategic Narrative Engine</h1>
+    <p class="sub">Design arcs, shape reputation, plan influence, and check message harmony — all in a luxury‑minimal interface.</p>
+  </div>
+</section>
+
+<section class="section wrapper fade-in">
+  <div class="tools-grid">
+    <div class="tool">
+      <h3>Narrative Arc Builder</h3>
+      <div class="row">
+        <input id="naTheme" placeholder="Theme (e.g. Ethical AI Leadership)">
+        <input id="naAudience" placeholder="Audience (e.g. Policymakers)">
+        <select id="naHorizon"><option>30 days</option><option>Quarter</option><option>Year</option></select>
+        <button onclick="EV.genArc()">Generate</button>
+      </div>
+      <div id="naOut" class="output" aria-live="polite"></div>
+    </div>
+
+    <div class="tool">
+      <h3>Reputation Angle Analyzer</h3>
+      <div class="row">
+        <input id="repTopic" placeholder="Topic/Announcement">
+        <select id="repRegions"><option>US</option><option>EU</option><option>Global</option></select>
+        <button onclick="EV.genReputation()">Analyze</button>
+      </div>
+      <div id="repOut" class="output"></div>
+    </div>
+
+    <div class="tool">
+      <h3>Influence Strategy Planner</h3>
+      <div class="row">
+        <input id="infObjective" placeholder="Objective (e.g. Standard-setting leadership)">
+        <input id="infChannels" placeholder="Channels (e.g. Op-eds, Keynotes, Briefings)">
+        <button onclick="EV.genPlan()">Plan</button>
+      </div>
+      <div id="infOut" class="output"></div>
+    </div>
+
+    <div class="tool">
+      <h3>Messaging Harmony Index</h3>
+      <div class="row">
+        <textarea id="msgSample" placeholder="Paste a draft message"></textarea>
+      </div>
+      <div class="row">
+        <select id="msgTone"><option>Executive</option><option>Warm</option><option>Technical</option></select>
+        <button onclick="EV.genHarmony()">Evaluate</button>
+      </div>
+      <div id="msgOut" class="output"></div>
+    </div>
+  </div>
+  <div class="center" style="margin-top:16px">
+    <button class="btn" onclick="EV.exportPDF()">Export All to PDF</button>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrapper small">© Athenia — Evoke Media Tools</div>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/evoke.js"></script>
+</body>
+</html>

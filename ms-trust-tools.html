@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microsoft Division — Enterprise Trust Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<meta name="description" content="Digital sovereignty controls, trust documentation wizard, and AI deployment safety checklist.">
+</head>
+<body>
+<header class="wrapper" aria-label="Header">
+  <div style="display:flex;align-items:center;gap:12px;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="index.html" class="badge" aria-label="Athenia Home"></a>
+      <strong style="font-family:Montserrat, sans-serif;letter-spacing:.06em;color:#0E0E11">ATHENIA GLOBAL HOLDINGS</strong>
+    </div>
+    <nav aria-label="Primary">
+      <a class="btn" href="sales.html">Sales</a>
+      <a class="btn" href="athenax-tools.html">AthenaX Tools</a>
+      <a class="btn" href="ms-trust-tools.html" aria-current="page">Microsoft Trust Tools</a>
+      <a class="btn" href="governance.html">Governance</a>
+      <a class="btn" href="esg.html">ESG</a>
+    
+      <a class="btn" href="email-tracker.html">Email Tracker</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="blueprint" aria-hidden="true"></div>
+  <div class="content wrapper fade-in">
+    <div class="kicker">Microsoft Division</div>
+    <h1 class="title">Enterprise Trust & Sovereignty Controls</h1>
+    <p class="sub">Generate regional sovereignty policies, trust documentation packs, and AI deployment safety checklists.</p>
+  </div>
+</section>
+
+<section class="section wrapper fade-in">
+  <div class="tools-grid">
+    <div class="tool">
+      <h3>Digital Sovereignty Control Panel</h3>
+      <div class="row">
+        <select id="dsRegion"><option>US</option><option>EU</option><option>UK</option><option>APAC</option></select>
+        <select id="dsData"><option>Standard</option><option>Sensitive</option><option>Critical</option></select>
+        <button onclick="MS.genSovereignty()">Generate</button>
+      </div>
+      <div id="dsOut" class="output"></div>
+    </div>
+
+    <div class="tool">
+      <h3>Trust Documentation Wizard</h3>
+      <div class="row">
+        <input id="tdProduct" placeholder="Product/Workload (e.g. Azure App)">
+        <select id="tdSector"><option>Public Sector</option><option>Financial</option><option>Healthcare</option><option>Enterprise</option></select>
+        <button onclick="MS.genTrustPack()">Create Pack</button>
+      </div>
+      <div id="tdOut" class="output"></div>
+    </div>
+
+    <div class="tool">
+      <h3>AI Deployment Safety Checklist</h3>
+      <div class="row">
+        <input id="aiUse" placeholder="Use Case (e.g. Customer Support Triage)">
+        <select id="aiRisk"><option>Low</option><option>Moderate</option><option>High</option></select>
+        <button onclick="MS.genAICheck()">Checklist</button>
+      </div>
+      <div id="aiOut" class="output"></div>
+    </div>
+  </div>
+  <div class="center" style="margin-top:16px">
+    <button class="btn" onclick="MS.exportPDF()">Export All to PDF</button>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrapper small">© Athenia — Microsoft Division Trust Tools</div>
+</footer>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/ms.js"></script>
+</body>
+</html>

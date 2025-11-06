@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AthenaX Labs — AI Tools Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<meta name="description" content="AthenaX Labs — client-side AI tools panel for strategy, policy, narrative, and governance drafting demos.">
+</head>
+<body>
+
+
+<header class="wrapper" aria-label="Header">
+  <div style="display:flex;align-items:center;gap:12px;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="index.html" class="badge" aria-label="Athenia Home"></a>
+      <strong style="font-family:Montserrat, sans-serif;letter-spacing:.06em;color:#0E0E11">ATHENIA GLOBAL HOLDINGS</strong>
+    </div>
+    <nav aria-label="Primary">
+      <a class="btn" href="microsoft.html">Microsoft</a>
+      <a class="btn" href="athenax.html">AthenaX</a>
+      <a class="btn" href="athenax-tools.html">AthenaX Tools</a>
+      <a class="btn" href="herfuture.html">HerFuture</a>
+      <a class="btn" href="gaiasystems.html">Gaia</a>
+      <a class="btn" href="evokemedia.html">Evoke</a>
+      <a class="btn" href="governance.html">Governance</a>
+      <a class="btn" href="esg.html">ESG</a>
+    
+      <a class="btn" href="email-tracker.html">Email Tracker</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="blueprint" aria-hidden="true"></div>
+  <div class="content wrapper fade-in">
+    <div class="kicker">AthenaX Labs</div>
+    <h1 class="title">AI Tools Panel — Client‑Side Demo</h1>
+    <p class="sub">Generate policy drafts, strategy briefs, narrative analysis, and governance models directly in your browser. No server or API required.</p>
+  </div>
+</section>
+
+<section class="section wrapper fade-in">
+  <div class="tools-grid">
+    <div class="tool">
+      <h3>Policy Writer</h3>
+      <div class="row">
+        <input id="policyTopic" placeholder="Topic (e.g. AI usage in public sector)">
+        <input id="policyRegion" placeholder="Region (e.g. EU)">
+        <select id="policyTone">
+          <option>Executive</option>
+          <option>Technical</option>
+          <option>Concise</option>
+          <option>Advisory</option>
+        </select>
+        <button onclick="genPolicy()">Generate</button><button onclick="apiPolicy()">Use Mock API</button>
+      </div>
+      <div id="policyOut" class="output" aria-live="polite"></div>
+    </div>
+
+    <div class="tool">
+      <h3>Strategic Brief Generator</h3>
+      <div class="row">
+        <input id="briefGoal" placeholder="Goal (e.g. Lead sovereign cloud standards)">
+        <input id="briefAudience" placeholder="Audience (e.g. Fortune 100 CIOs)">
+        <select id="briefHorizon">
+          <option>0–90 days</option>
+          <option>90–180 days</option>
+          <option>12 months</option>
+          <option>Multi-year</option>
+        </select>
+        <button onclick="genBrief()">Generate</button><button onclick="apiBrief()">Use Mock API</button>
+      </div>
+      <div id="briefOut" class="output" aria-live="polite"></div>
+    </div>
+
+    <div class="tool">
+      <h3>Narrative Analysis</h3>
+      <div class="row">
+        <input id="narrTheme" placeholder="Theme (e.g. Ethical AI leadership)">
+        <input id="narrRegion" placeholder="Region (e.g. North America)">
+        <input id="narrValue" placeholder="Core Value (e.g. Integrity)">
+        <button onclick="genNarr()">Generate</button><button onclick="apiNarr()">Use Mock API</button>
+      </div>
+      <div id="narrOut" class="output" aria-live="polite"></div>
+    </div>
+
+    <div class="tool">
+      <h3>Governance Model Drafter</h3>
+      <div class="row">
+        <input id="govDomain" placeholder="Domain (e.g. Model Deployment)">
+        <select id="govMaturity">
+          <option>Foundational</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+        <input id="govScope" placeholder="Scope (e.g. Enterprise)">
+        <button onclick="genGov()">Generate</button><button onclick="apiGov()">Use Mock API</button>
+      </div>
+      <div id="govOut" class="output" aria-live="polite"></div>
+    </div>
+  </div>
+  <p class="small" style="margin-top:8px">Note: These are on-page demo generators to illustrate AthenaX workflows. They do not call external APIs.</p>
+
+    <div class="center" style="margin-top:24px">
+      <button class="btn" onclick="exportPDF()">Export All to PDF</button>
+    </div>
+    
+</section>
+</main>
+<footer class="footer">
+  <div class="wrapper small">© Athenia Global Holdings. AthenaX Labs demo tools.</div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/athenax.js"></script>
+</body>
+</html>

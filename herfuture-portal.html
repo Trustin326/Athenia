@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HerFuture Ventures — Founder Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HerFuture Ventures — Open Access founder portal for women-led companies under Athenia Global Holdings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- Global header/nav -->
+  <header class="wrapper" aria-label="Header">
+    <div style="display:flex;align-items:center;gap:12px;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:12px">
+        <a href="index.html" class="badge" aria-label="Athenia Home"></a>
+        <strong style="font-family:Montserrat, sans-serif;letter-spacing:.06em;color:#0E0E11">ATHENIA GLOBAL HOLDINGS</strong>
+      </div>
+      <nav aria-label="Primary">
+        <a class="btn" href="microsoft.html">Microsoft</a>
+        <a class="btn" href="athenax.html">AthenaX</a>
+        <a class="btn" href="athenax-tools.html">AthenaX Tools</a>
+        <a class="btn" href="herfuture.html">HerFuture</a>
+        <a class="btn" href="herfuture-portal.html" aria-current="page">HerFuture Portal</a>
+        <a class="btn" href="gaiasystems.html">Gaia</a>
+        <a class="btn" href="evokemedia.html">Evoke</a>
+        <a class="btn" href="governance.html">Governance</a>
+        <a class="btn" href="esg.html">ESG</a>
+      
+      <a class="btn" href="email-tracker.html">Email Tracker</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="blueprint" aria-hidden="true"></div>
+      <div class="content wrapper fade-in center">
+        <div class="kicker">HerFuture Ventures</div>
+        <h1 class="title">Your work matters. Your vision deserves to lead.</h1>
+        <p class="sub">Athenia elevates women who build with clarity, integrity, and conviction. You are not here to be evaluated — you are here to be recognized.</p>
+        <a href="#founder-form" class="btn" style="margin-top:16px">Begin Founder Profile</a>
+      </div>
+    </section>
+
+    <!-- FOUNDER INTAKE -->
+    <section id="founder-form" class="section wrapper fade-in">
+      <h2>Founder Intake</h2>
+      <form id="hfForm" class="hf-form" onsubmit="event.preventDefault(); HF.generateProfile();">
+        <fieldset>
+          <legend>Founder Details</legend>
+          <div class="hf-row">
+            <input id="fName" placeholder="Your Name" required />
+            <input id="fRegion" placeholder="Region / Location" />
+            <input id="fLinkedIn" placeholder="LinkedIn (optional)" />
+            <input id="fWebsite" placeholder="Website (optional)" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Startup Identity</legend>
+          <div class="hf-row">
+            <input id="cName" placeholder="Company Name" required />
+            <select id="cIndustry" aria-label="Industry">
+              <option>AI / SaaS</option><option>HealthTech</option><option>FinTech</option>
+              <option>Climate / Energy</option><option>Education</option><option>Consumer / E-commerce</option>
+            </select>
+            <select id="cModel" aria-label="Business Model">
+              <option>SaaS</option><option>Marketplace</option><option>Enterprise</option>
+              <option>Hardware</option><option>Consumer</option><option>Non-profit / Gov</option>
+            </select>
+            <select id="cTraction" aria-label="Traction">
+              <option>Idea</option><option>MVP</option><option>Pilots</option><option>Revenue</option><option>Scaling</option>
+            </select>
+          </div>
+          <textarea id="cVision" placeholder="1-sentence vision" required></textarea>
+          <textarea id="cProblem" placeholder="3 sentences: problem + solution" required></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Soft Power Signature</legend>
+          <textarea id="sigWhy" placeholder="My work exists because:" required></textarea>
+          <textarea id="sigFor" placeholder="I build for those who:" required></textarea>
+          <p class="small">Speak clearly. Speak simply. Your truth is enough.</p>
+        </fieldset>
+
+        <div class="center" style="margin-top:12px">
+          <button class="btn" type="submit">Generate Founder Profile Summary</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- READINESS SCORING + VIOLET GLOW HALO -->
+    <section class="section wrapper fade-in">
+      <h2>Readiness Scoring</h2>
+      <p class="small">Transparent, supportive, and non-judgmental. We reflect clarity, not charisma.</p>
+      <div class="hf-grid">
+        <div>
+          <div class="hf-scorecard">
+            <div class="hf-score-ctrls">
+              <label>Problem Clarity <input id="scProblem" type="range" min="0" max="5" step="1" value="3" oninput="HF.drawHalo()" /></label>
+              <label>Solution Fit <input id="scSolution" type="range" min="0" max="5" step="1" value="3" oninput="HF.drawHalo()" /></label>
+              <label>Market Shape <input id="scMarket" type="range" min="0" max="5" step="1" value="3" oninput="HF.drawHalo()" /></label>
+              <label>Founder Commitment <input id="scCommit" type="range" min="0" max="5" step="1" value="3" oninput="HF.drawHalo()" /></label>
+              <label>Ethical &amp; Equity Alignment <input id="scEthics" type="range" min="0" max="5" step="1" value="3" oninput="HF.drawHalo()" /></label>
+            </div>
+            <canvas id="hfHalo" width="380" height="380" class="hf-halo" aria-label="Radial readiness halo visualization"></canvas>
+          </div>
+        </div>
+        <div>
+          <div class="hf-stage" id="hfStage">Stage Recommendation: —</div>
+          <div class="hf-out" id="hfScores"></div>
+          <div class="center" style="margin-top:8px">
+            <button class="btn" onclick="HF.computeStage()">Update Stage Recommendation</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENTOR MATCHES + CAPITAL PATH -->
+    <section class="section wrapper fade-in">
+      <h2>Mentorship & Capital Path</h2>
+      <div class="hf-grid">
+        <div>
+          <h3>Suggested Mentors</h3>
+          <div id="hfMentors" class="hf-out"></div>
+        </div>
+        <div>
+          <h3>Recommended Capital Path</h3>
+          <div id="hfCapital" class="hf-out"></div>
+        </div>
+      </div>
+      <div class="center" style="margin-top:14px">
+        <button class="btn" onclick="HF.exportPDF()">Export Profile as PDF</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrapper small">© Athenia Global Holdings — HerFuture Ventures</div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/herfuture.js"></script>
+</body>
+</html>
